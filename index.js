@@ -5,16 +5,19 @@ const port = process.env.PORT;
 const db = require("./utils/db");
 
 //routes
-const routes = require('./routes');
-
+const routes = require("./routes");
 
 //Seeders
-// const seedUsers = require("./utils/userSeeder");
-// seedUsers(100);
-// const productSeeder = require("./utils/productSeeder");
-// productSeeder(100);
+/*
+const seedUsers = require("./utils/userSeeder");
+seedUsers(100);
+const productSeeder = require("./utils/productSeeder");
+productSeeder(100);
+*/
 
 // Use JSON body parsing middleware
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 
 app.use("/api", routes);
